@@ -1,0 +1,502 @@
+{
+"Kareivių g. 2C-1, Vilnius": [
+54.714983,
+25.2868339
+],
+"Vilnius": [
+54.6870458,
+25.2829111
+],
+"Švenčionių g. 106, Nemenčinė, Vilniaus raj.": null,
+"Nemenčinė, Vilniaus raj.": null,
+"Vilniaus r.": [
+54.7545328,
+25.5992752
+],
+"Aknystų k., 2, Miško g. 2, Debeikių sen.  Anykščių r.": null,
+"2, Miško g. 2, Debeikių sen.  Anykščių r.": null,
+"Anykščių r.": [
+55.256894,
+24.783307
+],
+"Parko g. 21-201, Vilnius": [
+54.6872454,
+25.4160154
+],
+"Lankų g. 32, Putriškių k., Balbieriškio sen., Prienų r. sav.": null,
+"Putriškių k., Balbieriškio sen., Prienų r. sav.": null,
+"Prienų r. sav.": null,
+"Bažnyčios g. 23A, Marijampolė": [
+54.5548506,
+23.3453562
+],
+"Marijampolė": [
+54.5562536,
+23.3503665
+],
+"Klevų g. 27, Pabradė, Švenčionių r.": [
+54.9729311,
+25.7714195
+],
+"Pabradė, Švenčionių r.": [
+54.9831145,
+25.7663024
+],
+"Švenčionių r.": [
+55.0697365,
+25.9983183
+],
+"Paupio g. 40, Ruklos k., Jonavos raj.": null,
+"Ruklos k., Jonavos raj.": null,
+"Jonavos r.": [
+55.1168377,
+24.2815728
+],
+"Pušelės g. 15, Naujieji Valkininkai, Varėnos r.": [
+54.3527585,
+24.7319382
+],
+"Naujieji Valkininkai, Varėnos r.": [
+54.3490669,
+24.7205264
+],
+"Varėnos r.": [
+54.1725666,
+24.4183024
+],
+"Aušros g. 25, Bartkuškio k., Širvintų r.": null,
+"Bartkuškio k., Širvintų r.": [
+54.9689505,
+24.9492075
+],
+"Širvintų r.": [
+55.0096018,
+24.8883492
+],
+"J. Kubiliaus g. 2, Vilnius": [
+54.7081429,
+25.2967379
+],
+"Kaniaviškių g. 1-1, Vilnius": [
+54.6760297,
+25.3912987
+],
+"P. Cvirkos g. 15, Širvintos": null,
+"Širvintos": [
+55.0514295,
+24.9516122
+],
+"Meškeriotojų g. 22, Vilnius": [
+54.7430654,
+25.302442
+],
+"Dūkšto kel. 68, Visaginas": [
+55.5887292,
+26.4798296
+],
+"Visaginas": [
+55.59966,
+26.4370071
+],
+"Centrinė a. 12, Adutiškis, Švenčionių r.": [
+55.1576547,
+26.5857551
+],
+"Adutiškis, Švenčionių r.": [
+55.1573449,
+26.5867484
+],
+"A. Musteikio g. 58 Tauragnai, Utenos r. sav.": null,
+"Utenos r. sav.": null,
+"Klonio g. 14B, Druskininkai": [
+54.0177607,
+23.9664701
+],
+"Druskininkai": [
+54.0171932,
+23.9772282
+],
+"Molėtų g. 18, Girsteitiškio k., Molėtų r.": null,
+"Girsteitiškio k., Molėtų r.": [
+55.3405328,
+25.2905951
+],
+"Molėtų r.": [
+55.2282306,
+25.4148997
+],
+"Kurtinių g. 1D, Kaunas": [
+54.8651504,
+23.9772901
+],
+"Kaunas": [
+54.8982139,
+23.9044817
+],
+"Maironio g. 12, Kazlų Rūda": [
+54.7503964,
+23.4904554
+],
+"Kazlų Rūda": [
+54.7520669,
+23.4985141
+],
+"Senoji g. 3, Mielagėnų mst., Ignalinos raj.": null,
+"Mielagėnų mst., Ignalinos raj.": null,
+"Ignalinos r.": [
+55.4107237,
+26.3013003
+],
+"Vilties g. 12, Padvarių k., Kretingos r.": null,
+"Padvarių k., Kretingos r.": null,
+"Kretingos r.": [
+55.9686093,
+21.3604059
+],
+"Panemunės g. 28, Prienai": [
+54.6352337,
+23.9577726
+],
+"Prienai": [
+54.6338459,
+23.9428415
+],
+"Klevų g. 10, Skemų k., Rokiškio r.": null,
+"Skemų k., Rokiškio r.": [
+55.98368,
+25.6852356
+],
+"Rokiškio r.": [
+56.0097488,
+25.5534537
+],
+"Vytenio g. 37, Vilnius": [
+54.6756816,
+25.2638618
+],
+"Strūnos k. 5, Strūna, Švenčionių r.": null,
+"Strūna, Švenčionių r.": [
+55.0332927,
+26.1615452
+],
+"Petro Katiliaus g. 22, Katiliškių k., Mokolų sen., Marijampolės sav.": null,
+"Katiliškių k., Mokolų sen., Marijampolės sav.": null,
+"Marijampolės sav.": [
+54.5711728,
+23.3385123
+],
+"Kupiškio g. 66, Utena": [
+55.5142144,
+25.5693319
+],
+"Utena": [
+55.4984381,
+25.6025772
+],
+"Ligoninės g. 2A, Eišiškės, Šalčininkų r. sav.": null,
+"Eišiškės, Šalčininkų r. sav.": null,
+"Eišiškės": [
+54.1686462,
+25.0001234
+],
+"Verbų g. 8, Čekoniškių k., Vilniaus raj.": null,
+"Čekoniškių k., Vilniaus raj.": null,
+"Prūdiškių g. 59, Prūdiškių k., Vilniaus r.": null,
+"Prūdiškių k., Vilniaus r.": [
+54.5497488,
+25.2823089
+],
+"Dvaro g. 1, Jasiuliškio k., Ukmergės r.": null,
+"Jasiuliškio k., Ukmergės r.": [
+55.3183589,
+24.8471805
+],
+"Ukmergės r.": [
+55.301698,
+24.7372908
+],
+"Katedros a. 4, Panevėžys": [
+55.7221359,
+24.3560631
+],
+"Panevėžys": [
+55.7344985,
+24.3578055
+],
+"Aušros g. 18B, Zarasai": [
+55.7222439,
+26.2665082
+],
+"Zarasai": [
+55.7304035,
+26.2471471
+],
+"Mokyklos g. 46, Mūro Strėvininkų k., Žiežmarių sen.  Kaišiadorių r. sav.": null,
+"Mūro Strėvininkų k., Žiežmarių sen.  Kaišiadorių r. sav.": null,
+"Kaišiadorių r.": [
+54.8270857,
+24.4264088
+],
+"Dvaro g. 1, Jotainių k., Vadoklių sen., Panevėžio r.": null,
+"Jotainių k., Vadoklių sen., Panevėžio r.": null,
+"Panevėžio r.": [
+55.6591917,
+24.3393912
+],
+"Ryto g. 15, Kailinių k. 2, Veisiejų sen., Lazdijų r.": null,
+"Kailinių k. 2, Veisiejų sen., Lazdijų r.": null,
+"Lazdijų r.": [
+54.1607523,
+23.6775875
+],
+"Utenos g. 41A, Vilnius": [
+54.707124,
+25.27365
+],
+"Palanga": [
+55.9229818,
+21.0682657
+],
+"Žalioji g. 19B, Garliava, Kauno r.": [
+54.8327371,
+23.8680307
+],
+"Garliava, Kauno r.": [
+54.8279294,
+23.8746799
+],
+"Kauno r.": [
+54.9206031,
+23.922259
+],
+"Gėlos g. 2, Tuščiaulių k., Vilniaus r.": null,
+"Tuščiaulių k., Vilniaus r.": null,
+"Stoties g. 2, Šlapaberžės k., Kėdainių raj.": null,
+"Šlapaberžės k., Kėdainių raj.": null,
+"Kėdainių r.": [
+55.339637,
+24.0118376
+],
+"Vosyliškių k. 1, Rumšiškių sen., Kaišiadorių r.": null,
+"Rumšiškių sen., Kaišiadorių r.": null,
+"Vilties g. 2, Čižiūnų k.  Trakų r.": null,
+"Čižiūnų k.  Trakų r.": null,
+"Trakų r.": [
+54.5642213,
+24.7282262
+],
+"Technikumo g. 2, Aukštadvaris, Trakų r.": [
+54.5800426,
+24.5263718
+],
+"Aukštadvaris, Trakų r.": [
+54.5804193,
+24.5279233
+],
+"Šviesos skg. 1, Vievis": [
+54.7717066,
+24.807206
+],
+"Vievis": [
+54.7693774,
+24.8158205
+],
+"Šešupės g. 5, Netičkampio k., Liudvinavo sen., Marijampolės sav.": null,
+"Netičkampio k., Liudvinavo sen., Marijampolės sav.": null,
+"Antavilių g. 11, Vilnius": [
+54.7934311,
+25.3962545
+],
+"Lavėnų km. 3, Pasvalio raj.": null,
+"Pasvalio raj.": null,
+"Pasvalio r.": [
+56.0706909,
+24.3842838
+],
+"Jono Adakauskio g. 1, Adakavo k., Skaudvilės sen., Tauragės r. sav.": null,
+"Adakavo k., Skaudvilės sen., Tauragės r. sav.": null,
+"Tauragės r.": [
+55.3018593,
+22.2210606
+],
+"Dvaro g. 36. Ilguvos k., Kriūkų sen.  Šakių r.": null,
+"Kriūkų sen.  Šakių r.": null,
+"Šakių r.": [
+54.9148731,
+23.078048
+],
+"Ligoninės g. 1-1, Tyruliai, Radviliškio r. sav.": null,
+"Tyruliai, Radviliškio r. sav.": null,
+"Radviliškio r.": [
+55.6934168,
+23.6501225
+],
+"Švenčionių g. 18A, Nemenčinė, Vilniaus r. sav.": null,
+"Nemenčinė, Vilniaus r. sav.": null,
+"Baltų pr. 73-43, Kaunas": [
+54.9242293,
+23.9079064
+],
+"A. Daugėlos g. 1A-1, Klausučių k., Seredžiaus sen., Jurbarko r. sav.": null,
+"Klausučių k., Seredžiaus sen., Jurbarko r. sav.": null,
+"Jurbarko r.": [
+55.2176268,
+22.9652342
+],
+"Darbininkų g. 27A, Šiauliai": [
+55.9418057,
+23.2913175
+],
+"Šiauliai": [
+55.9340823,
+23.3157775
+],
+"Kalvarijų g. 323, Vilnius": [
+54.7385701,
+25.2823251
+],
+"Ryšininko g. 2, Ryšininko k., Nemenčinės sen.": null,
+"Ryšininko k., Nemenčinės sen.": null,
+"Rukeliškių g. 44, Vilnius": [
+54.7418656,
+25.303464
+],
+"Lakštingalų g. 7, Vilnius": [
+54.7319485,
+25.3251236
+],
+"Žolyno g. 47, Vilnius": [
+54.7074714,
+25.3363572
+],
+"Baltasis skg. 3A, Vilnius": [
+54.6822207,
+25.3042527
+],
+"S. Stanevičiaus g. 57, Vilnius": [
+54.7293536,
+25.2557282
+],
+"P. Kriaučiūno g. 13, Marijampolė": [
+54.5534926,
+23.3469565
+],
+"Vilniaus r. sav., Riešės sen., Ažulaukės k., Rapolo Slizienio g. 1F": null,
+"Riešės sen., Ažulaukės k., Rapolo Slizienio g. 1F": null,
+"Taikos pr. 112, Kaunas": [
+54.9145197,
+24.0182467
+],
+"Dariaus ir Girėno g. 3, Ukmergės r. sav., Želva": null,
+"Ukmergės r. sav., Želva": null,
+"Veterinarijos g. 16, Biržų r.": [
+56.1867971,
+24.7593795
+],
+"Biržų r.": [
+56.175453,
+24.8313461
+],
+"Gedimino g. 26A, Trakai": [
+54.6215412,
+24.9346946
+],
+"Trakai": [
+54.6449911,
+24.9353981
+],
+"Jūros g. 4, Klaipėda": [
+55.7102797,
+21.1276029
+],
+"Klaipėda": [
+55.7127529,
+21.1350469
+],
+"Parko g. 13, Širvintos": [
+55.037571,
+24.9624526
+],
+"Alyvų g. 1, Sangrūdos k., Kalvarijos sav.": null,
+"Sangrūdos k., Kalvarijos sav.": null,
+"Kalvarijos sav.": null,
+"Gedimino g. 10, Balninkų mstl., Molėtų r.": null,
+"Balninkų mstl., Molėtų r.": null,
+"J. Aisčio g. 4, Rumšiškės, Rumšiškių sen., Kaišiadorių r.": null,
+"Rumšiškės, Rumšiškių sen., Kaišiadorių r.": null,
+"Mikališkių k. 4, Kalvarijos sen., Kalvarijos sav.": null,
+"Kalvarijos sen., Kalvarijos sav.": null,
+"Bažnyčios g. 19, Marijampolė": [
+54.553822,
+23.3458135
+],
+"Švenčionių g. 106, Nemenčinė": [
+54.8514957,
+25.4720481
+],
+"Aknystų k., 2, Miško g. 2": null,
+"Lankų g. 32, Putriškių k.": null,
+"Klevų g. 27, Pabradė": [
+54.9729311,
+25.7714195
+],
+"Paupio g. 40, Ruklos k.": null,
+"Pušelės g. 15, Naujieji Valkininkai": [
+54.3527585,
+24.7319382
+],
+"Aušros g. 25, Bartkuškio k.": null,
+"Centrinė a. 12, Adutiškis": [
+55.1576547,
+26.5857551
+],
+"Molėtų g. 18, Girsteitiškio k.": null,
+"Senoji g. 3, Mielagėnų mst.": null,
+"Vilties g. 12, Padvarių k.": null,
+"Klevų g. 10, Skemų k.": null,
+"Strūnos k. 5, Strūna": null,
+"Petro Katiliaus g. 22, Katiliškių k.": null,
+"Ligoninės g. 2A, Eišiškės": [
+54.1666054,
+25.0014382
+],
+"Verbų g. 8, Čekoniškių k.": null,
+"Prūdiškių g. 59, Prūdiškių k.": null,
+"Dvaro g. 1, Jasiuliškio k.": null,
+"Mokyklos g. 46, Mūro Strėvininkų k.": null,
+"Dvaro g. 1, Jotainių k.": null,
+"Ryto g. 15, Kailinių k. 2": null,
+"Žalioji g. 19B, Garliava": [
+54.8327371,
+23.8680307
+],
+"Gėlos g. 2, Tuščiaulių k.": null,
+"Stoties g. 2, Šlapaberžės k.": null,
+"Technikumo g. 2, Aukštadvaris": [
+54.5800426,
+24.5263718
+],
+"Šešupės g. 5, Netičkampio k.": null,
+"Jono Adakauskio g. 1, Adakavo k.": null,
+"Ligoninės g. 1-1, Tyruliai": [
+55.7739087,
+23.3471806
+],
+"Švenčionių g. 18A, Nemenčinė": [
+54.8469989,
+25.4638854
+],
+"A. Daugėlos g. 1A-1, Klausučių k.": null,
+"Ryšininko g. 2, Ryšininko k.": null,
+"Ažulaukės k., Rapolo Slizienio g. 1F": null,
+"Dariaus ir Girėno g. 3, Želva": [
+55.2200516,
+25.0978697
+],
+"Alyvų g. 1, Sangrūdos k.": null,
+"Gedimino g. 10, Balninkų mstl.": null,
+"J. Aisčio g. 4, Rumšiškės": [
+54.8655074,
+24.2227327
+]
+}

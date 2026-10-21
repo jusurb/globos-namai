@@ -1,0 +1,5 @@
+.remember/
+.seo-work/
+__pycache__/
+.playwright-mcp/
+.DS_Store
