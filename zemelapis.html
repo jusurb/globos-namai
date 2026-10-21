@@ -736,7 +736,7 @@ for (const r of DATA.filter(r => r.lat !== null)) {
   points.push(ll);
   L.marker(ll, {icon: L.divIcon({className: "", iconSize: null,
       html: `<span class="pin${r.approx ? " approx" : ""}" style="background:${band.bg};color:${band.fg};margin-top:${stack * 22}px">${label}</span>`})})
-    .bindPopup(pop).bindTooltip(`${r.nr}. ${r.name}`)
+    .bindPopup(pop).bindTooltip(Object.assign(document.createElement("span"), {textContent: `${r.nr}. ${r.name}`}))  // a string would be parsed as HTML
     .addTo(layers.get(band) || layers.set(band, L.layerGroup().addTo(map)).get(band));
 }
 let shown = null;  // null = all bands

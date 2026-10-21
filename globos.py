@@ -496,7 +496,7 @@ for (const r of DATA.filter(r => r.lat !== null)) {
   points.push(ll);
   L.marker(ll, {icon: L.divIcon({className: "", iconSize: null,
       html: `<span class="pin${r.approx ? " approx" : ""}" style="background:${band.bg};color:${band.fg};margin-top:${stack * 22}px">${label}</span>`})})
-    .bindPopup(pop).bindTooltip(`${r.nr}. ${r.name}`)
+    .bindPopup(pop).bindTooltip(Object.assign(document.createElement("span"), {textContent: `${r.nr}. ${r.name}`}))  // a string would be parsed as HTML
     .addTo(layers.get(band) || layers.set(band, L.layerGroup().addTo(map)).get(band));
 }
 let shown = null;  // null = all bands
@@ -560,6 +560,11 @@ def static_rows(rows):
                    f"<td>{esc(r['contact'])}</td><td>{km(r)}</td></tr>" for r in rows)
 
 
+def fill(template, **values):
+    """Replace __NAME__ placeholders in one pass, so text from the source page is never scanned for placeholders again."""
+    return re.sub(r"__([A-Z_]+)__", lambda m: values[m[1]] if m[1] in values else m[0], template)
+
+
 def main():
     out_path = sys.argv[1] if len(sys.argv) > 1 else "globos.html"
     req = urllib.request.Request(URL, headers={"User-Agent": "Mozilla/5.0"})
@@ -580,15 +585,13 @@ def main():
                     f"(pigu / vidutiniškai / brangu), eilės, laisvos vietos ir kontaktai. Duomenys iš vilnius.lt, {date}.", map_name, date)
     # the shared map file has no table beside it, so it links back only once the site has a public address
     table_link = f' <a href="{html.escape(SITE_URL + ("" if page_name == "index.html" else page_name))}">Lentelė</a>' if SITE_URL else ""
-    page = (PAGE.replace("__HEAD__", table_head).replace("__SUMMARY__", html.escape(text)).replace("__ROWS__", static_rows(rows))
-            .replace("__URL__", SOURCE_LINK).replace("__DATE__", date).replace("__DATA__", data))
+    page = fill(PAGE, HEAD=table_head, SUMMARY=html.escape(text), ROWS=static_rows(rows), URL=SOURCE_LINK, DATE=date, DATA=data)
     map_path = os.path.join(out_dir, map_name)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(page)
     with open(map_path, "w", encoding="utf-8") as f:
-        f.write(MAP_PAGE.replace("__HEAD__", map_head).replace("__TABLE_LINK__", table_link).replace("__URL__", SOURCE_LINK)
-                .replace("__LEAFLET_CSS__", fetch_verified(*LEAFLET_CSS)).replace("__LEAFLET_JS__", fetch_verified(*LEAFLET_JS))
-                .replace("__DATE__", date).replace("__DATA__", data))
+        f.write(fill(MAP_PAGE, HEAD=map_head, TABLE_LINK=table_link, URL=SOURCE_LINK, LEAFLET_CSS=fetch_verified(*LEAFLET_CSS),
+                     LEAFLET_JS=fetch_verified(*LEAFLET_JS), DATE=date, DATA=data))
     if SITE_URL:
         urls = "".join(f"<url><loc>{html.escape(SITE_URL + ('' if n == 'index.html' else n))}</loc><lastmod>{date}</lastmod></url>" for n in (page_name, map_name))
         with open(os.path.join(out_dir, "sitemap.xml"), "w", encoding="utf-8") as f:

@@ -1,7 +1,7 @@
 import json
 import unittest
 
-from globos import HEADER, address_queries, distance, extract, main_price, parse_row, postcode_lookup, row_link, severe_prices, summary, head, website
+from globos import HEADER, fill, address_queries, distance, extract, main_price, parse_row, postcode_lookup, row_link, severe_prices, summary, head, website
 
 
 class GlobosTest(unittest.TestCase):
@@ -94,6 +94,10 @@ class GlobosTest(unittest.TestCase):
         self.assertIn("<title>A &quot;B&quot; &lt;c&gt;</title>", h)
         self.assertNotIn("canonical", h)  # no public address yet
         self.assertEqual(json.loads(h.split('ld+json">')[1].split("</script>")[0])["@type"], "Dataset")
+
+    def test_fill_does_not_rescan_inserted_text(self):
+        self.assertEqual(fill("<td>__ROWS__</td><script>__DATA__</script>", ROWS="evil __DATA__", DATA="[]"),
+                         "<td>evil __DATA__</td><script>[]</script>")
 
 
 if __name__ == "__main__":
