@@ -348,8 +348,10 @@ __HEAD__
  th{background:#f4f4f4;cursor:pointer;white-space:nowrap;position:sticky;top:64px} td.n{text-align:right;white-space:nowrap}
  td.c{white-space:pre-line;font-size:12px} .note{color:#777;font-size:12px} small{color:#777}
  .arrow{font-size:11px} .arrow.off{color:#bbb}
+__NAV_CSS__
 </style></head><body>
-<h1 style="font-size:22px;margin:0 0 6px">Socialinės globos namai asmenims su sunkia negalia: kainos, eilės ir laisvos vietos <a href="zemelapis.html" style="font-size:16px;font-weight:normal">Žemėlapis</a></h1>
+__NAV__
+<h1 style="font-size:22px;margin:12px 0 6px">Socialinės globos namai asmenims su sunkia negalia: kainos, eilės ir laisvos vietos</h1>
 <p style="margin:0 0 6px;max-width:900px">__SUMMARY__</p>
 <small>Šaltinis: <a href="__URL__">vilnius.lt</a>, duomenys gauti __DATE__. <span id="count"></span>. Nežinomos reikšmės (?) filtruojant paliekamos. ≈ atstumas apskaičiuotas pagal vietą žemėlapyje. Spustelėkite stulpelio antraštę, kad surikiuotumėte.</small>
 <div class="filters">
@@ -439,6 +441,7 @@ __HEAD__
  html,body{height:100%;margin:0;font:14px/1.4 system-ui,sans-serif;color:#222;background:#fff}
  body{display:flex;flex-direction:column}
  header{padding:8px 16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap} #map{flex:1;min-height:300px}
+__NAV_CSS__
  small{color:#666} .legend{display:inline-flex;gap:4px;align-items:center;flex-wrap:wrap}
  .pin{transform:translate(-50%,-50%);white-space:nowrap;font:600 11px/1 system-ui,sans-serif;padding:3px 5px;
   border-radius:4px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.35);cursor:pointer;display:inline-block}
@@ -449,7 +452,7 @@ __HEAD__
  .pop b{display:block;margin-top:10px} .pop b:first-child{margin-top:0} .pop .a{color:#666;font-size:12px}
  .pop .c{white-space:pre-line;font-size:12px}
 </style></head><body>
-<header><h1 style="font-size:16px;margin:0">Globos namų žemėlapis: kainos asmenims su sunkia negalia</h1>__TABLE_LINK__ <small>duomenys: <a href="__URL__" target="_blank" rel="noopener">vilnius.lt</a>, __DATE__</small>
+<header>__NAV__<h1 style="font-size:16px;margin:0">Globos namų žemėlapis: kainos asmenims su sunkia negalia</h1> <small>duomenys: <a href="__URL__" target="_blank" rel="noopener">vilnius.lt</a>, __DATE__</small>
  <small class="legend">Kaina su sunkia negalia, €/mėn. (spustelėkite spalvą – rodys tik ją): <span id="bands" class="legend"></span>
  · <span class="pin approx" style="transform:none;background:#fff">apytikslė vieta</span> (gyvenvietė / rajonas)
  <span id="missing"></span></small></header>
@@ -560,6 +563,23 @@ def static_rows(rows):
                    f"<td>{esc(r['contact'])}</td><td>{km(r)}</td></tr>" for r in rows)
 
 
+NAV_CSS = """ .nav{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#eef5ef;border:1px solid #cfe3d3}
+ .nav a{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;color:#1f6b2d;text-decoration:none;
+  font:600 15px/1 system-ui,sans-serif;transition:background .15s}
+ .nav a:hover{background:#dcebdf} .nav a:focus-visible{outline:2px solid #1f6b2d;outline-offset:2px}
+ .nav a[aria-current=page]{background:#2e8b3e;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+ .nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}"""
+NAV_ICONS = {"table": '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg>',
+             "map": '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>'}
+
+
+def nav(active, table_href, map_href):
+    """Same two tabs on both pages, current one filled: easy to see and to tap on a phone."""
+    tab = lambda key, href, label: (f'<a href="{html.escape(href)}"{" aria-current=page" if key == active else ""}>'
+                                    f"{NAV_ICONS[key]}{label}</a>")
+    return f'<nav class="nav" aria-label="Rodinys">{tab("table", table_href, "Lentelė")}{tab("map", map_href, "Žemėlapis")}</nav>'
+
+
 def fill(template, **values):
     """Replace __NAME__ placeholders in one pass, so text from the source page is never scanned for placeholders again."""
     return re.sub(r"__([A-Z_]+)__", lambda m: values[m[1]] if m[1] in values else m[0], template)
@@ -583,14 +603,15 @@ def main():
     map_head = head("Globos namų žemėlapis – kainos asmenims su sunkia negalia",
                     f"Interaktyvus {len(rows)} socialinės globos įstaigų žemėlapis: mėnesio kaina asmeniui su sunkia negalia spalvomis "
                     f"(pigu / vidutiniškai / brangu), eilės, laisvos vietos ir kontaktai. Duomenys iš vilnius.lt, {date}.", map_name, date)
-    # the shared map file has no table beside it, so it links back only once the site has a public address
-    table_link = f' <a href="{html.escape(SITE_URL + ("" if page_name == "index.html" else page_name))}">Lentelė</a>' if SITE_URL else ""
-    page = fill(PAGE, HEAD=table_head, SUMMARY=html.escape(text), ROWS=static_rows(rows), URL=SOURCE_LINK, DATE=date, DATA=data)
+    # the map is also shared as a single file, so its table link is absolute once the site has a public address
+    table_href = SITE_URL + ("" if page_name == "index.html" else page_name) if SITE_URL else page_name
+    page = fill(PAGE, HEAD=table_head, NAV=nav("table", table_href, map_name), NAV_CSS=NAV_CSS, SUMMARY=html.escape(text),
+                ROWS=static_rows(rows), URL=SOURCE_LINK, DATE=date, DATA=data)
     map_path = os.path.join(out_dir, map_name)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(page)
     with open(map_path, "w", encoding="utf-8") as f:
-        f.write(fill(MAP_PAGE, HEAD=map_head, TABLE_LINK=table_link, URL=SOURCE_LINK, LEAFLET_CSS=fetch_verified(*LEAFLET_CSS),
+        f.write(fill(MAP_PAGE, HEAD=map_head, NAV=nav("map", table_href, map_name), NAV_CSS=NAV_CSS, URL=SOURCE_LINK, LEAFLET_CSS=fetch_verified(*LEAFLET_CSS),
                      LEAFLET_JS=fetch_verified(*LEAFLET_JS), DATE=date, DATA=data))
     if SITE_URL:
         urls = "".join(f"<url><loc>{html.escape(SITE_URL + ('' if n == 'index.html' else n))}</loc><lastmod>{date}</lastmod></url>" for n in (page_name, map_name))

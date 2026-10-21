@@ -681,6 +681,12 @@ svg.leaflet-image-layer.leaflet-interactive path {
  html,body{height:100%;margin:0;font:14px/1.4 system-ui,sans-serif;color:#222;background:#fff}
  body{display:flex;flex-direction:column}
  header{padding:8px 16px;display:flex;gap:16px;align-items:center;flex-wrap:wrap} #map{flex:1;min-height:300px}
+ .nav{display:inline-flex;gap:4px;padding:4px;border-radius:999px;background:#eef5ef;border:1px solid #cfe3d3}
+ .nav a{display:inline-flex;align-items:center;gap:8px;padding:13px 18px;border-radius:999px;color:#1f6b2d;text-decoration:none;
+  font:600 15px/1 system-ui,sans-serif;transition:background .15s}
+ .nav a:hover{background:#dcebdf} .nav a:focus-visible{outline:2px solid #1f6b2d;outline-offset:2px}
+ .nav a[aria-current=page]{background:#2e8b3e;color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25)}
+ .nav svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
  small{color:#666} .legend{display:inline-flex;gap:4px;align-items:center;flex-wrap:wrap}
  .pin{transform:translate(-50%,-50%);white-space:nowrap;font:600 11px/1 system-ui,sans-serif;padding:3px 5px;
   border-radius:4px;border:2px solid #fff;box-shadow:0 1px 3px rgba(0,0,0,.35);cursor:pointer;display:inline-block}
@@ -691,7 +697,7 @@ svg.leaflet-image-layer.leaflet-interactive path {
  .pop b{display:block;margin-top:10px} .pop b:first-child{margin-top:0} .pop .a{color:#666;font-size:12px}
  .pop .c{white-space:pre-line;font-size:12px}
 </style></head><body>
-<header><h1 style="font-size:16px;margin:0">Globos namų žemėlapis: kainos asmenims su sunkia negalia</h1> <a href="https://jusurb.github.io/globos-namai/">Lentelė</a> <small>duomenys: <a href="https://vilnius.lt/savivaldybe/sveikata-ir-socialine-parama/socialines-paslaugos/istaigos-teikiancios-socialines-globos-paslaugas-senyvo-amziaus-asmenims-ir-asmenims-su-negalia#:~:text=ILGALAIK%C4%96S,S%C4%84RA%C5%A0AS" target="_blank" rel="noopener">vilnius.lt</a>, 2026-10-21</small>
+<header><nav class="nav" aria-label="Rodinys"><a href="https://jusurb.github.io/globos-namai/"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></svg>Lentelė</a><a href="zemelapis.html" aria-current=page><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2z"/><path d="M9 4v14M15 6v14"/></svg>Žemėlapis</a></nav><h1 style="font-size:16px;margin:0">Globos namų žemėlapis: kainos asmenims su sunkia negalia</h1> <small>duomenys: <a href="https://vilnius.lt/savivaldybe/sveikata-ir-socialine-parama/socialines-paslaugos/istaigos-teikiancios-socialines-globos-paslaugas-senyvo-amziaus-asmenims-ir-asmenims-su-negalia#:~:text=ILGALAIK%C4%96S,S%C4%84RA%C5%A0AS" target="_blank" rel="noopener">vilnius.lt</a>, 2026-10-21</small>
  <small class="legend">Kaina su sunkia negalia, €/mėn. (spustelėkite spalvą – rodys tik ją): <span id="bands" class="legend"></span>
  · <span class="pin approx" style="transform:none;background:#fff">apytikslė vieta</span> (gyvenvietė / rajonas)
  <span id="missing"></span></small></header>
