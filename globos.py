@@ -381,6 +381,20 @@ function linkTo(el, text, href) {
   const a = document.createElement("a"); a.href = href; a.target = "_blank"; a.rel = "noopener"; a.textContent = text;
   el.append(a);
 }
+// emails and phone numbers in the contact text become mailto:/tel: links, so a tap on a phone starts the mail or call
+const CONTACT = /([\w.+-]+@[\w-]+(?:\.[\w-]+)+)|((?:\+\s?370|\b8)[\s()-]*\d[\d\s()-]{6,}\d)/g;
+function contactCell(td, text) {
+  let last = 0;
+  for (const m of text.matchAll(CONTACT)) {
+    td.append(text.slice(last, m.index));
+    const a = document.createElement("a");
+    a.href = m[1] ? "mailto:" + m[1] : "tel:" + m[2].replace(/[^\d+]/g, "");
+    a.textContent = m[0];
+    td.append(a);
+    last = m.index + m[0].length;
+  }
+  td.append(text.slice(last));
+}
 function referralNote(el, r) {
   if (r.referral) { const s = document.createElement("div"); s.className = "note"; s.textContent = `Siuntimus išduoda ${r.referral}`; el.append(s); }
 }
@@ -409,7 +423,7 @@ function render() {
       p.append(`${x.eur.toFixed(2)} €/${x.unit}`);
       if (x.label) { const s = document.createElement("div"); s.className = "note"; s.textContent = x.label; p.append(s); }
     });
-    cell(tr, r.contact, "c"); cell(tr, r.km === null ? "?" : (r.km_est ? "≈ " : "") + r.km, "n").title = r.km_est ? "apskaičiuota pagal vietą žemėlapyje" : "";
+    contactCell(cell(tr, "", "c"), r.contact); cell(tr, r.km === null ? "?" : (r.km_est ? "≈ " : "") + r.km, "n").title = r.km_est ? "apskaičiuota pagal vietą žemėlapyje" : "";
   }
   document.getElementById("count").textContent = `Rodoma ${rows.length} iš ${DATA.length}`;
   head.querySelectorAll("th").forEach((th, i) => {
