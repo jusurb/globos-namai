@@ -1,5 +1,6 @@
 import json
 import unittest
+from unittest import mock
 
 from globos import HEADER, fill, address_queries, distance, extract, main_price, parse_row, postcode_lookup, row_link, severe_prices, summary, head, website
 
@@ -90,9 +91,12 @@ class GlobosTest(unittest.TestCase):
     def test_summary_and_head_escape_and_count(self):
         rows = [{"price": [{"eur": e, "unit": u}], "free_n": f} for e, u, f in [(1500, "mėn", 1), (2000, "mėn", 0), (1700, "mėn", None), (90, "dieną", 0)]]
         self.assertIn("nuo 1500 iki 2000 € (mediana 1700 €); laisvų vietų nurodyta 1 įstaigose", summary(rows, "2026-10-21"))
-        h = head('A "B" <c>', "d", "globos.html", "2026-10-21", dataset=True)
+        with mock.patch("globos.SITE_URL", None):
+            h = head('A "B" <c>', "d", "index.html", "2026-10-21", dataset=True)
         self.assertIn("<title>A &quot;B&quot; &lt;c&gt;</title>", h)
-        self.assertNotIn("canonical", h)  # no public address yet
+        self.assertNotIn("canonical", h)  # local-only use
+        with mock.patch("globos.SITE_URL", "https://x.github.io/g/"):
+            self.assertIn('<link rel="canonical" href="https://x.github.io/g/">', head("t", "d", "index.html", "2026-10-21"))
         self.assertEqual(json.loads(h.split('ld+json">')[1].split("</script>")[0])["@type"], "Dataset")
 
     def test_fill_does_not_rescan_inserted_text(self):

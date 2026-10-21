@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch the vilnius.lt long/short-term social care providers table and write a filterable HTML page.
 
-Usage: python3 globos.py [output.html]   (default: globos.html)
+Usage: python3 globos.py [output.html]   (default: index.html, the GitHub Pages home page)
 Also writes zemelapis.html, a self-contained map (needs internet only for map tiles) that can be shared as one file.
 """
 import base64
@@ -29,7 +29,7 @@ JUNK = re.compile(r"Pasitikrinti eilę|Atidaryti XLSX dokumentą|h?ttps?://\S+|V
 PRICE = re.compile(r"(\d{1,3}(?: ?\d{3})*(?:,\d+)?)\s*Eur\s*/\s*(mėn|dieną|val)\.?")
 SENTENCE_END = re.compile(r";|\.(?:\s|$)")
 VILNIUS = (54.6872, 25.2797)
-SITE_URL = None  # public address once published, e.g. "https://<user>.github.io/globos/": adds canonical/og:url, sitemap.xml, map -> table link
+SITE_URL = "https://jusurb.github.io/globos-namai/"  # public address: canonical/og:url, sitemap.xml, map -> table link; None for local-only use
 ROAD_FACTOR = 1.12  # median source km / straight-line km over exactly located facilities
 GEONAMES_LT = "https://download.geonames.org/export/zip/LT.zip"  # postcodes + village names, CC BY 4.0
 LEAFLET_CSS = ("https://unpkg.com/leaflet@1.9.4/dist/leaflet.css", "p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=")
@@ -566,7 +566,7 @@ def fill(template, **values):
 
 
 def main():
-    out_path = sys.argv[1] if len(sys.argv) > 1 else "globos.html"
+    out_path = sys.argv[1] if len(sys.argv) > 1 else "index.html"
     req = urllib.request.Request(URL, headers={"User-Agent": "Mozilla/5.0"})
     with urllib.request.urlopen(req, timeout=60) as resp:
         rows = extract(resp.read().decode("utf-8"))
